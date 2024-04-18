@@ -1662,7 +1662,7 @@ struct multiply_add<Array<half_t, N>, Array<half_t, N>, Array<half_t, N>> {
 
       __half d_residual = __hfma(
         a_residual_ptr[N - 1], 
-        reinterpret_cast<__half const &>(b)
+        reinterpret_cast<__half const &>(b),
         reinterpret_cast<__half const &>(c));
 
       result[N - 1] = reinterpret_cast<half_t const &>(d_residual);
